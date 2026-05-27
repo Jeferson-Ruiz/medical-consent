@@ -1,0 +1,12 @@
+package com.jr.consentimiento.dto;
+
+import java.util.Map;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class PdfRequestDTO {
+    private String consentType;
+    private Map<String, String> data;
+}
