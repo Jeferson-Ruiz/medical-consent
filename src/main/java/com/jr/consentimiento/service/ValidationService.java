@@ -20,7 +20,7 @@ public class ValidationService {
 
     public void validateData(Map<String, String> date) {
         date.forEach((fields, value) -> {
-            if (fields != null && value.matches(".*" + DANGEROUS_CHARACTERS + ".*")) {
+            if (value != null && value.matches(".*" + DANGEROUS_CHARACTERS + ".*")) {
                 throw new IllegalArgumentException("El campo '" + fields + "' contiene caracteres no permitidos");
             }
         });
