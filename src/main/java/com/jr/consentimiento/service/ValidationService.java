@@ -18,7 +18,7 @@ public class ValidationService {
         throw new IllegalArgumentException("Tipo de consentimiento no válido: " + type);
     }
 
-    public void validarDatos(Map<String, String> date) {
+    public void validateData(Map<String, String> date) {
         date.forEach((fields, value) -> {
             if (fields != null && value.matches(".*" + DANGEROUS_CHARACTERS + ".*")) {
                 throw new IllegalArgumentException("El campo '" + fields + "' contiene caracteres no permitidos");
