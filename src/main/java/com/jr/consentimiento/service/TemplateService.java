@@ -1,5 +1,6 @@
 package com.jr.consentimiento.service;
 
+import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
@@ -13,20 +14,14 @@ public class TemplateService {
 
     private final TemplateEngine templateEngine;
 
-    public TemplateService() {
-        ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
-        resolver.setPrefix("template/consentimientos/");
-        resolver.setSuffix(".html");
-        resolver.setTemplateMode(TemplateMode.HTML);
-        resolver.setCharacterEncoding("UTF-8");
-
-        templateEngine = new TemplateEngine();
-        templateEngine.setTemplateResolver(resolver);
+    // Spring inyecta el TemplateEngine que él mismo configuró
+    public TemplateService(TemplateEngine templateEngine) {
+        this.templateEngine = templateEngine;
     }
 
-    public String processedTemplate(ConsentType type, Map<String, Object> date) {
+    public String processedTemplate(ConsentType type, Map<String, String> date) {
         Context context = new Context();
-        context.setVariables(date);
+        context.setVariables(new HashMap<>(date));
         String nameTemplate = type.getArchivo().replace(".html", "");
         return templateEngine.process(nameTemplate, context);
     }
