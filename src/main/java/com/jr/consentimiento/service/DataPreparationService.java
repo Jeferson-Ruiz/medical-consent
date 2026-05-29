@@ -9,6 +9,7 @@ public class DataPreparationService {
 
     private final String REMPLACE_NULL = "N/E";
 
+    //Cambia los valores vacion por N/E
     public Map<String, String> dateNull(Map<String, String> date) {
 
         Map<String, String> newDate = new HashMap<>();
