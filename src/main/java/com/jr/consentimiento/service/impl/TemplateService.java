@@ -1,4 +1,4 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.service.impl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,13 +6,13 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import com.jr.consentimiento.enums.ConsentType;
+import com.jr.consentimiento.service.ITemplateService;
 
 @Service
-public class TemplateService {
+public class TemplateService implements ITemplateService {
 
     private final TemplateEngine templateEngine;
 
-    // Spring inyecta el TemplateEngine que él mismo configuró
     public TemplateService(TemplateEngine templateEngine) {
         this.templateEngine = templateEngine;
     }

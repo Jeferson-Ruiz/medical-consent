@@ -1,11 +1,12 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.service.impl;
 
 import java.util.Map;
 import org.springframework.stereotype.Service;
 import com.jr.consentimiento.enums.ConsentType;
+import com.jr.consentimiento.service.IValidationService;
 
 @Service
-public class ValidationService {
+public class ValidationService implements IValidationService {
 
     private static final String DANGEROUS_CHARACTERS = "[<>{}]";
 

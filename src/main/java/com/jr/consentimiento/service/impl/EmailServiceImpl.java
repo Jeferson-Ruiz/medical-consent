@@ -1,4 +1,4 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.service.impl;
 
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import com.jr.consentimiento.dto.ModelEmailDto;
+import com.jr.consentimiento.service.IEmailService;
 import jakarta.mail.internet.MimeMessage;
 
 @Service
@@ -36,6 +37,7 @@ public class EmailServiceImpl implements IEmailService {
             String contentHtml = templateEngine.process("model/modelEmail", context);
 
             helper.setText(contentHtml, true);
+
             javaMailSender.send(message);
         } catch (Exception e) {
             throw new RuntimeException("Error al enviar el correo: " + e.getMessage(), e);

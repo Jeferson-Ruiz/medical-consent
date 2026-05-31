@@ -1,19 +1,24 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.service.impl;
 
 import java.util.Map;
 import org.springframework.stereotype.Service;
 import com.jr.consentimiento.dto.PdfRequestDTO;
 import com.jr.consentimiento.enums.ConsentType;
+import com.jr.consentimiento.service.IDataPreparationService;
+import com.jr.consentimiento.service.IHtmlToPdfService;
+import com.jr.consentimiento.service.IPdfGenerationService;
+import com.jr.consentimiento.service.ITemplateService;
+import com.jr.consentimiento.service.IValidationService;
 
 @Service
-public class PdfGenerationService {
-    private final ValidationService validationService;
-    private final DataPreparationService preparationService;
-    private final TemplateService templateService;
-    private final HtmlToPdfService htmlToPdfService;
+public class PdfGenerationService implements IPdfGenerationService {
+    private final IValidationService validationService;
+    private final IDataPreparationService preparationService;
+    private final ITemplateService templateService;
+    private final IHtmlToPdfService htmlToPdfService;
 
-    public PdfGenerationService(ValidationService validationService, DataPreparationService preparationService,
-            TemplateService templateService, HtmlToPdfService htmlToPdfService) {
+    public PdfGenerationService(IValidationService validationService, IDataPreparationService preparationService,
+            ITemplateService templateService, IHtmlToPdfService htmlToPdfService) {
         this.validationService = validationService;
         this.preparationService = preparationService;
         this.templateService = templateService;

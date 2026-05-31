@@ -1,15 +1,16 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.service.impl;
 
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Service;
+import com.jr.consentimiento.service.IDataPreparationService;
 
 @Service
-public class DataPreparationService {
+public class DataPreparationService implements IDataPreparationService {
 
     private final String REMPLACE_NULL = "N/E";
 
-    //Cambia los valores vacion por N/E
+    // Cambia los valores vacion por N/E
     public Map<String, String> dateNull(Map<String, String> date) {
 
         Map<String, String> newDate = new HashMap<>();
