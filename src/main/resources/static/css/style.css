@@ -4,43 +4,28 @@
   padding: 0;
 }
 
+@page {
+  size: 216mm 356mm;
+  margin: 15mm 20mm;
+}
+
 body {
   font-family: 'Times New Roman', Times, serif;
   font-size: 11px;
-  background: #d0d0d0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px 12px;
-  gap: 24px;
+  background: #fff;
 }
 
-/* ── Nota al pie flotante ── */
-.footnote-top {
-  width: 100%;
-  max-width: 760px;
-  font-size: 10px;
-  color: #333;
-}
-
-/* ── Hoja A4 ── */
 .page {
   width: 100%;
-  max-width: 760px;
-  background: #fff;
-  padding: 28px 36px 32px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-  position: relative;
+  page-break-after: always;
 }
 
-/* Utilidades */
+.page:last-child {
+  page-break-after: avoid;
+}
+
 .bold { font-weight: bold; }
 .fl { border-bottom: 1.5px solid #000; display: inline-block; }
 .mt4 { margin-top: 4px; }
 .mt8 { margin-top: 8px; }
 .mt14 { margin-top: 14px; }
-
-@media print {
-    body { background: #fff; padding: 0; }
-    .page { box-shadow: none; margin: 0; }
-}

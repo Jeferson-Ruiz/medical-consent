@@ -149,8 +149,8 @@
     <!-- Continuación expresión de voluntad -->
     <div class="firma-section">
       <p>
-        En consecuencia, decido <strong>ACEPTAR</strong>: <span class="fl" style="width:26px;">[[${accept}]]</span> que se me aplique la vacuna.&nbsp;&nbsp;&nbsp;
-        <strong>NO ACEPTAR</strong>: <span class="fl" style="width:26px;">[[${notAccept}]]</span> que se me aplique la vacuna.
+        En consecuencia, decido <strong>ACEPTAR</strong>: <span class="fl" style="width:26px;">[[${accept}?: 'N/E']]</span> que se me aplique la vacuna.&nbsp;&nbsp;&nbsp;
+        <strong>NO ACEPTAR</strong>: <span class="fl" style="width:26px;">[[${notAccept} ?: 'N/E']]</span> que se me aplique la vacuna.
       </p>
 
       <div class="mt14">
@@ -163,7 +163,7 @@
           <div class="huella-box">[[${fingerprintUser}]]</div>
           <div class="razon-row">
             <label class="bold">Razón por la que no firma:</label>
-            <span class="razon-line">[[${reasonDenial}]]</span>
+            <span class="razon-line">[[${reasonDenial} ?: 'N/E']]</span>
           </div>
         </div>
       </div>
@@ -178,24 +178,24 @@
       <div class="sub-firma-row">
         <div class="field-group">
           <label>Nombres</label>
-          <span class="field-line">[[${nameRepresentative}]]</span>
+          <span class="field-line">[[${nameRepresentative} ?: 'N/E']]</span>
         </div>
         <div class="field-group">
           <label>Apellidos</label>
-          <span class="field-line">[[${lastNameRepresentative}]]</span>
+          <span class="field-line">[[${lastNameRepresentative} ?: 'N/E']]</span>
         </div>
       </div>
 
         <div class="id-row">
           <label class="bold">TIPO DE IDENTIFICACIÓN</label>
-          <span class="field-line ciudad">[[${idTypeRepresentative}]]</span>
+          <span class="field-line ciudad">[[${idTypeRepresentative} ?: 'N/E']]</span>
           <label class="bold">NUMERO</label>
-          <span class="field-line ciudad">[[${idNumberRepresentative}]]</span>
+          <span class="field-line ciudad">[[${idNumberRepresentative} ?: 'N/E']]</span>
         </div>
 
       <div class="firma-espacio">
         <label class="bold">Firma</label>
-        <span class="firma-line">[[${signatureRepresentative}]]</span>
+        <span class="firma-line">[[${signatureRepresentative} ?: 'N/E']]</span>
       </div>
     </div>
 

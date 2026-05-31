@@ -51,13 +51,10 @@
 
 /* ══════════════ CIUDAD / FECHA ══════════════ */
 .fecha-row {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 .fecha-row .field-line {
@@ -93,23 +90,19 @@
 
 /* ── Identificación ── */
 .id-row {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    margin-bottom: 6px;
-    font-weight: bold;
-    flex-wrap: wrap;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
 .id-row label {
-    white-space: nowrap;
+  display: inline;
 }
 
 .id-row .field-line {
-    border-bottom: 1.5px solid #000;
-    display: inline-block;
-    flex: 1;
-    min-width: 80px;
+  border-bottom: 1.5px solid #000;
+  display: inline-block;
+  min-width: 80px;
 }
 
 .id-row.narrow .field-line {
@@ -118,12 +111,9 @@
 
 /* checkbox-like inline */
 .check-row {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    flex-wrap: wrap;
-    font-weight: bold;
-    margin-bottom: 6px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
 }
 
 .check-item {
@@ -235,15 +225,13 @@
 }
 
 .razon-row {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 4px;
+  display: inline;
 }
 
 .razon-line {
-    border-bottom: 1.5px solid #000;
-    width: 280px;
-    display: inline-block;
+  border-bottom: 1.5px solid #000;
+  width: 280px;
+  display: inline-block;
 }
 
 /* Sub-secciones de firma */
@@ -260,37 +248,27 @@
 }
 
 .sub-firma-row {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-    align-items: baseline;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .sub-firma-row .field-group {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    flex: 1;
+  display: inline;
 }
 
 .sub-firma-row .field-group label {
-    font-weight: bold;
-    white-space: nowrap;
+  font-weight: bold;
 }
 
 .sub-firma-row .field-group .field-line {
-    border-bottom: 1.5px solid #000;
-    flex: 1;
-    display: inline-block;
-    min-width: 80px;
+  border-bottom: 1.5px solid #000;
+  display: inline-block;
+  min-width: 80px;
 }
 
 .firma-espacio {
-    margin-top: 22px;
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
+  margin-top: 22px;
+  display: block;
 }
 
 /* ══════════════ INSTITUCIÓN ══════════════ */
@@ -314,19 +292,15 @@
 }
 
 .inst-row {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    margin-bottom: 6px;
-    font-weight: bold;
-    flex-wrap: wrap;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
 .inst-row .field-line {
-    border-bottom: 1.5px solid #000;
-    flex: 1;
-    display: inline-block;
-    min-width: 100px;
+  border-bottom: 1.5px solid #000;
+  display: inline-block;
+  min-width: 100px;
 }
 
 /* ══════════════ NOTA FINAL ══════════════ */
