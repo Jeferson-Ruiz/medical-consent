@@ -5,8 +5,6 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.templatemode.TemplateMode;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import com.jr.consentimiento.enums.ConsentType;
 
 @Service
@@ -22,7 +20,7 @@ public class TemplateService {
     public String processedTemplate(ConsentType type, Map<String, String> date) {
         Context context = new Context();
         context.setVariables(new HashMap<>(date));
-        String nameTemplate = type.getArchivo().replace(".html", "");
+        String nameTemplate = "consentimientos/" + type.getArchivo().replace(".html", "");
         return templateEngine.process(nameTemplate, context);
     }
 }
