@@ -3,28 +3,25 @@ package com.jr.consentimiento.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.jr.consentimiento.dto.ModelEmailDto;
-import com.jr.consentimiento.service.IEmailService;
-import jakarta.mail.MessagingException;
-import org.springframework.http.HttpStatus;
+import com.jr.consentimiento.service.ISendEmailWithPdf;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/send-email")
+@RequestMapping("/api/consent/email")
 public class EmailController {
 
-    private final IEmailService emailService;
+    private final ISendEmailWithPdf sendEmailWithPdf;
 
-    public EmailController(IEmailService emailService) {
-        this.emailService = emailService;
+    public EmailController(ISendEmailWithPdf sendEmailWithPdf) {
+        this.sendEmailWithPdf = sendEmailWithPdf;
     }
 
-    @PostMapping()
-    public ResponseEntity<?> postMethodName(@RequestBody ModelEmailDto emailDto) throws MessagingException {
-        emailService.sendEmail(emailDto);
-
-        return new ResponseEntity<>("Correo enviado exitosament", HttpStatus.OK);
+    @PostMapping("/send-email")
+    public ResponseEntity<String> sendEmail(@RequestBody ModelEmailDto email) throws Exception {
+        sendEmailWithPdf.sendEamil(email);
+        return ResponseEntity.ok("Correo enviado correctamente");
     }
 
 }
