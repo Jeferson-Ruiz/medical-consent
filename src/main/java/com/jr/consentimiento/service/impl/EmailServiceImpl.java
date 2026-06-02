@@ -1,5 +1,6 @@
 package com.jr.consentimiento.service.impl;
 
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class EmailServiceImpl implements IEmailService {
     }
 
     @Override
-    public void sendEmail(ModelEmailDto email) {
+    public void sendEmail(ModelEmailDto email, byte[] pdf) {
 
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
@@ -33,10 +34,14 @@ public class EmailServiceImpl implements IEmailService {
 
             Context context = new Context();
             context.setVariable("message", email.getMessage());
-
             String contentHtml = templateEngine.process("model/modelEmail", context);
-
             helper.setText(contentHtml, true);
+
+            // Adjunta el PDF
+            helper.addAttachment(
+                    "consentimiento.pdf",
+                    new ByteArrayResource(pdf),
+                    "application/pdf");
 
             javaMailSender.send(message);
         } catch (Exception e) {

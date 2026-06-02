@@ -4,5 +4,5 @@ import com.jr.consentimiento.dto.ModelEmailDto;
 
 public interface IEmailService {
 
-    void sendEmail(ModelEmailDto email);
+    void sendEmail(ModelEmailDto email, byte[] pdf);
 }
