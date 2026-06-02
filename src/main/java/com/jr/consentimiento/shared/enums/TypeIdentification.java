@@ -1,4 +1,4 @@
-package com.jr.consentimiento.module.sendEmail.enums;
+package com.jr.consentimiento.shared.enums;
 
 public enum TypeIdentification {
     RC,
