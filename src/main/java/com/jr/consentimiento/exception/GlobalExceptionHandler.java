@@ -3,7 +3,8 @@ package com.jr.consentimiento.exception;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import com.jr.consentimiento.dto.ErrorResponseDTO;
+
+import com.jr.consentimiento.module.sendEmail.dto.ErrorResponseDTO;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

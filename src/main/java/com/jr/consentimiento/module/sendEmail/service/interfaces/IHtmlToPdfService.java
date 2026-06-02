@@ -1,4 +1,4 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.module.sendEmail.service.interfaces;
 
 public interface IHtmlToPdfService {
 

@@ -1,9 +1,10 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Service;
-import com.jr.consentimiento.service.IDataPreparationService;
+
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IDataPreparationService;
 
 @Service
 public class DataPreparationService implements IDataPreparationService {

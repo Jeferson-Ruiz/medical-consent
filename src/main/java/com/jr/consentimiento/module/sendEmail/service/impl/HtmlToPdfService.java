@@ -1,8 +1,9 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import java.io.ByteArrayOutputStream;
 import org.springframework.stereotype.Service;
-import com.jr.consentimiento.service.IHtmlToPdfService;
+
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IHtmlToPdfService;
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
 
 @Service

@@ -1,12 +1,13 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import com.jr.consentimiento.enums.ConsentType;
-import com.jr.consentimiento.service.ITemplateService;
+
+import com.jr.consentimiento.module.sendEmail.enums.ConsentType;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.ITemplateService;
 
 @Service
 public class TemplateService implements ITemplateService {

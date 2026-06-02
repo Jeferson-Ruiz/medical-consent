@@ -1,9 +1,10 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import java.util.Map;
 import org.springframework.stereotype.Service;
-import com.jr.consentimiento.enums.ConsentType;
-import com.jr.consentimiento.service.IValidationService;
+
+import com.jr.consentimiento.module.sendEmail.enums.ConsentType;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IValidationService;
 
 @Service
 public class ValidationService implements IValidationService {

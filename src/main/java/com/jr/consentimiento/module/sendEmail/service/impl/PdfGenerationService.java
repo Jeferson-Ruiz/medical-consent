@@ -1,14 +1,15 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import java.util.Map;
 import org.springframework.stereotype.Service;
-import com.jr.consentimiento.dto.PdfRequestDTO;
-import com.jr.consentimiento.enums.ConsentType;
-import com.jr.consentimiento.service.IDataPreparationService;
-import com.jr.consentimiento.service.IHtmlToPdfService;
-import com.jr.consentimiento.service.IPdfGenerationService;
-import com.jr.consentimiento.service.ITemplateService;
-import com.jr.consentimiento.service.IValidationService;
+
+import com.jr.consentimiento.module.sendEmail.dto.PdfRequestDTO;
+import com.jr.consentimiento.module.sendEmail.enums.ConsentType;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IDataPreparationService;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IHtmlToPdfService;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IPdfGenerationService;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.ITemplateService;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IValidationService;
 
 @Service
 public class PdfGenerationService implements IPdfGenerationService {

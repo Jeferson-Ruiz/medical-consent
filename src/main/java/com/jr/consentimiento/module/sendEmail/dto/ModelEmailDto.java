@@ -1,5 +1,5 @@
 
-package com.jr.consentimiento.dto;
+package com.jr.consentimiento.module.sendEmail.dto;
 
 import java.util.Map;
 import lombok.Getter;

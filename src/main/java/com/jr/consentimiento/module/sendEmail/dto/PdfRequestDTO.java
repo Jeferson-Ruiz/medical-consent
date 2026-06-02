@@ -1,4 +1,4 @@
-package com.jr.consentimiento.dto;
+package com.jr.consentimiento.module.sendEmail.dto;
 
 import java.util.Map;
 import lombok.Getter;
@@ -9,4 +9,7 @@ import lombok.Setter;
 public class PdfRequestDTO {
     private String consentType;
     private Map<String, String> data;
+
 }
+
+

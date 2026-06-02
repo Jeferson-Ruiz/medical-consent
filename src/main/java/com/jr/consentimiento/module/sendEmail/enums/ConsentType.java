@@ -1,4 +1,4 @@
-package com.jr.consentimiento.enums;
+package com.jr.consentimiento.module.sendEmail.enums;
 
 import lombok.Getter;
 

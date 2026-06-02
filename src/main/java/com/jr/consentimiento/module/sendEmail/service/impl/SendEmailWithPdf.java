@@ -1,11 +1,12 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import org.springframework.stereotype.Service;
-import com.jr.consentimiento.dto.ModelEmailDto;
-import com.jr.consentimiento.dto.PdfRequestDTO;
-import com.jr.consentimiento.service.IEmailService;
-import com.jr.consentimiento.service.IPdfGenerationService;
-import com.jr.consentimiento.service.ISendEmailWithPdf;
+
+import com.jr.consentimiento.module.sendEmail.dto.ModelEmailDto;
+import com.jr.consentimiento.module.sendEmail.dto.PdfRequestDTO;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IEmailService;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IPdfGenerationService;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.ISendEmailWithPdf;
 
 @Service
 public class SendEmailWithPdf implements ISendEmailWithPdf {

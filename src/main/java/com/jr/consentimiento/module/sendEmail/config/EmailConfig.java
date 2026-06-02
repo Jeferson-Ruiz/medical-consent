@@ -1,4 +1,4 @@
-package com.jr.consentimiento.config;
+package com.jr.consentimiento.module.sendEmail.config;
 
 import java.util.Properties;
 import org.springframework.beans.factory.annotation.Value;

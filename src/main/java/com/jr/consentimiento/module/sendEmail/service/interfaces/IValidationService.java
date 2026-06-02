@@ -1,7 +1,8 @@
-package com.jr.consentimiento.service;
+package com.jr.consentimiento.module.sendEmail.service.interfaces;
 
 import java.util.Map;
-import com.jr.consentimiento.enums.ConsentType;
+
+import com.jr.consentimiento.module.sendEmail.enums.ConsentType;
 
 public interface IValidationService {
 

@@ -1,4 +1,4 @@
-package com.jr.consentimiento.dto;
+package com.jr.consentimiento.module.sendEmail.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

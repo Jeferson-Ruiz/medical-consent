@@ -1,4 +1,4 @@
-package com.jr.consentimiento.service.impl;
+package com.jr.consentimiento.module.sendEmail.service.impl;
 
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -6,8 +6,10 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import com.jr.consentimiento.dto.ModelEmailDto;
-import com.jr.consentimiento.service.IEmailService;
+
+import com.jr.consentimiento.module.sendEmail.dto.ModelEmailDto;
+import com.jr.consentimiento.module.sendEmail.service.interfaces.IEmailService;
+
 import jakarta.mail.internet.MimeMessage;
 
 @Service
