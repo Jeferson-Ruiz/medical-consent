@@ -4,14 +4,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.jr.consentimiento.module.users.dto.RequestLogin;
 import com.jr.consentimiento.module.users.dto.UserRequestDto;
 import com.jr.consentimiento.module.users.dto.UserResponseDto;
 import com.jr.consentimiento.module.users.service.IUserService;
 
-@Controller
-@RestController("api/oauth")
+@RestController
+@RequestMapping("/api/oauth")
 public class UserController {
 
     private final IUserService userService;
