@@ -1,7 +1,9 @@
 package com.jr.consentimiento.module.users.entity;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import com.jr.consentimiento.module.users.enums.Role;
 import com.jr.consentimiento.shared.enums.TypeIdentification;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,12 +37,21 @@ public class User {
     @Column(name = "use_tipo_id", nullable = false)
     private TypeIdentification typeIdentification;
 
-    @Column(name = "use_tipo_id", nullable = false)
+    @Column(name = "use_numero_id", nullable = false)
     private String identificationNumber;
 
     @Column(name = "use_email", nullable = false, unique = true)
     private String email;
 
+    @Column(name = "use_role", nullable = false)
+    private List<Role> roles;
+
     @Column(name = "use_contrasena",nullable = false)
     private String password;
+
+    @Column(name = "use_active", nullable =  false)
+    private boolean isActive; 
+
+    @Column(name = "use_fecha_registro", nullable =  false)
+    private LocalDateTime registrationDate;
 }
