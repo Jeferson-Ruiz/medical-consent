@@ -20,6 +20,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponseDTO> handleGeneral(Exception ex) {
         return ResponseEntity
                 .status(500)
-                .body(new ErrorResponseDTO(500, "Error al generar el PDF, intente nuevamente"));
+                .body(new ErrorResponseDTO(500, ex.getMessage()));
     }
 }
