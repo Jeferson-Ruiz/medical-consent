@@ -1,7 +1,12 @@
 package com.jr.consentimiento.module.users.entity;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import com.jr.consentimiento.module.users.enums.Role;
 import com.jr.consentimiento.shared.enums.TypeIdentification;
 import jakarta.persistence.Column;
@@ -21,7 +26,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "usuarios")
-public class User {
+public class User implements UserDetails{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,4 +59,16 @@ public class User {
 
     @Column(name = "use_fecha_registro", nullable =  false)
     private LocalDateTime registrationDate;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream()
+            .map(role -> new SimpleGrantedAuthority(role.name()))
+            .collect(Collectors.toList());
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
 }
