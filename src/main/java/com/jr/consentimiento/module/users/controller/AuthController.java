@@ -12,25 +12,22 @@ import com.jr.consentimiento.module.users.service.IAuthService;
 
 @RestController
 @RequestMapping("/auth")
-public class UserController {
+public class AuthController {
 
-    private final IAuthService userService;
+    private final IAuthService authService;
 
-    public UserController(IAuthService userService) {
-        this.userService = userService;
+    public AuthController(IAuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody UserRequestDto requestDto){
-        AuthResponseDto user =  userService.register(requestDto);
+        AuthResponseDto user =  authService.register(requestDto);
         return ResponseEntity.ok(user);
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody RequestLogin request){
-        //temporal mientras implemento Jwt
-        return null;
+        return ResponseEntity.ok(authService.login(request));
     }
-
-
 }

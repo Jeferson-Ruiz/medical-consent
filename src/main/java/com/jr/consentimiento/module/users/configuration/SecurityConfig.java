@@ -1,4 +1,4 @@
-package com.jr.consentimiento.module.users.security;
+package com.jr.consentimiento.module.users.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.jr.consentimiento.module.users.security.JwtAuthFilter;
 
 @Configuration
 @EnableWebSecurity

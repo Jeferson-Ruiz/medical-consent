@@ -2,6 +2,7 @@ package com.jr.consentimiento.module.users.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.jr.consentimiento.module.users.dto.RequestLogin;
@@ -37,19 +38,29 @@ public class AuthService implements IAuthService {
         return new AuthResponseDto(jwtService.generateToken(user));
     }
 
-    public void login(RequestLogin requestLogin){
-        User user = userReposotory.findByEmail(requestLogin.email())
-            .orElseThrow(() -> new EntityNotFoundException("usuario no encontrado"));
-        if (user.isActive() && 
-            user.getEmail().equals(requestLogin.email()) &&
-            user.getPassword().matches(requestLogin.password())) {
-        }
+    public AuthResponseDto login(RequestLogin requestLogin){
+        User user = getUserByEmail(requestLogin.email());
+        validatePassword(requestLogin.password(), user.getPassword());
+
+        return new AuthResponseDto(jwtService.generateToken(user));
     }
 
     //hepers
     private void isDuplicateEmail(String email){
         if (userReposotory.existsByEmail(email)) {
             throw new IllegalArgumentException("Email ya registrado en el sistema");
+        }
+    }
+
+    private User getUserByEmail(String email){
+        User user = userReposotory.findByEmail(email)
+            .orElseThrow(() -> new EntityNotFoundException("usuario no encontrado"));
+        return user;
+    }
+
+    private void validatePassword(String password, String encodedPassword){
+        if (!passwordEncoder.matches(password, encodedPassword)) {
+            throw new BadCredentialsException("Contraseña incorrecta");
         }
     }
   
