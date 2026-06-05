@@ -34,8 +34,7 @@ public class AuthService implements IAuthService {
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setActive(true);
         userReposotory.save(user);
-
-        return new AuthResponseDto(jwtService.getToken(user));
+        return new AuthResponseDto(jwtService.generateToken(user));
     }
 
     public void login(RequestLogin requestLogin){
